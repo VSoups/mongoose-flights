@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 // shorthand we can use when creating a new schema
 const Schema = mongoose.Schema;
 
+const destinationSchema = new Schema({
+    airport: { type: String, enum: ['LAX', 'SFO', 'ATL', 'DBX', 'LHR', 'HND'] },
+    arrival: { type: Date },
+})
+
 const flightSchema = new Schema({
     airline: { type: String, enum: ['American', 'Southwest', 'Hawaiian', 'United', 'Jetblue'] },
     airport: { type: String, enum: ['LAX', 'SFO', 'ATL', 'DBX', 'LHR', 'HND'], default: 'SFO' },
@@ -12,6 +17,7 @@ const flightSchema = new Schema({
         const year = today.getFullYear(); // save only year from the previous line
         return today.setFullYear(year + 1); // return the full date we saved but add 1 to the year (as default if nothing is chosen by the user)
     } },
+    destinations: [destinationSchema],
 }, {
     timestamps: true,
 });

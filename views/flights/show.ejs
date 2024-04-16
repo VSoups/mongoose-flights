@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+
+<section id="info-grid">
+    <h4>Airline: </h4>
+    <p><%= flightInfo.airport %></p>
+    <h4>Airport: </h4>
+    <p><%= flightInfo.airline %></p>
+    <h4>Flight Number: </h4>
+    <p><%= flightInfo.flightNum %></p>
+    <h4>Departure Time: </h4>
+    <p><%= flightInfo.departs %></p>
+    <h4>Destinations:</h4>
+    <% if (flightInfo.destinations.length) { %>
+        <% flightInfo.destinations.forEach(function(d) { %>
+            <p class="arrival"><span class="sub-head">Airport:</span><%= d.airport %>
+            <span class="sub-head">Arrival:</span><%= d.arrival %></p>
+        <% }) %>
+    <% } else { %>
+        <p class="arrival">None submitted yet</p>
+    <% } %>
+    
+</section>
+
+<form method="POST" action="/flights/<%= flightInfo._id %>/destinations" id="create-arrival">
+    <label>Airport:</label>
+    <select name="airport">
+        <option value="SFO" selected>SFO</option>
+        <option value="LAX">LAX</option>
+        <option value="ATL">ATL</option>
+        <option value="DBX">DBX</option>
+        <option value="LHR">LHR</option>
+        <option value="HND">HND</option>
+    </select>
+    <label>Arrival Time:</label>
+    <input type="datetime-local" name="arrival" required>
+    <button type="submit">Add</button>
+</form>
+        
+<%- include('../partials/footer') %>
