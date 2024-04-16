@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<form action="/flights" method="POST" id="create-flight">
+    <label>Airline:</label>
+        <select name="airline">
+            <option value="American" selected>American</option>
+            <option value="Southwest">Southwest</option>
+            <option value="Hawaiian">Hawaiian</option>
+            <option value="United">United</option>
+            <option value="Jetblue">Jetblue</option>
+        </select>
+    <label>Airport:</label>
+        <select name="airport">
+            <option value="SFO">SFO</option>
+            <option value="LAX">LAX</option>
+            <option value="ATL">ATL</option>
+            <option value="DBX">DBX</option>
+            <option value="LHR">LHR</option>
+            <option value="HND">HND</option>
+        </select>
+    <label>Flight Number:</label>
+        <input type="number" name="flightNum" required>
+    <label>Date:</label>
+        <input type="datetime-local" name="departs">
+    <button type="submit">Add</button>
+</form>
+<p><%= errMsg %></p>
+
+<%- include('../partials/footer') %>
