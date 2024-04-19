@@ -40,14 +40,16 @@
 <section id="ticket-section">
     <h3>Tickets</h3>
     <a href="/flights/<%= flightInfo._id %>/tickets/new">Add a ticket</a>
-    <% if (tickets.length) { %>
-        <% tickets.forEach(function(s) { %>
-            <p><%= s.seat %></p>
-            <p><%= s.price %></p>
-        <% }) %>
-    <% } else { %>
-        <p>No tickets purchased yet</p>
-    <% } %>
+    <section id="ticket-list">
+        <% if (tickets.length) { %>
+            <% tickets.forEach(function(s) { %>
+                <p>Seat: <%= s.seat %></p>
+                <p>Price: <%= s.price %></p>
+            <% }) %>
+        <% } else { %>
+            <p id="ticket-empty">No tickets purchased yet</p>
+        <% } %>
+    </section>
 </section>
         
 <%- include('../partials/footer') %>

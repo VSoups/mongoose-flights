@@ -26,7 +26,7 @@ h1 {
 
 th, td {
   text-align: center;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border: 1px solid black;
 }
 
@@ -35,7 +35,7 @@ th {
 }
 
 td {
-  background-color: lightgrey;
+  background-color: aliceblue;
 }
 
 #create-flight, #create-arrival {
@@ -111,8 +111,49 @@ td {
   color: black;
   background-color: skyblue;
   padding: 5px 8px;
+  margin-bottom: 20px;
 }
 
 #ticket-section a:hover {
   background-color: lightpink;
+}
+
+#ticket-list {
+  width: max-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-inline: 2px solid black;
+  justify-self: center;
+  background-color: lavender;
+}
+
+#ticket-list p:nth-child(odd):not(#ticket-empty) {
+  padding: 0 15px 0 30px;
+}
+
+#ticket-list p:nth-child(even) {
+  padding: 0 30px 0 15px;
+}
+
+#ticket-empty {
+  padding: 0 30px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+nav {
+  border: 2px solid black;
+  padding: 15px 30px;
+  width: max-content;
+  background-color: mintcream;
+}
+
+nav a {
+  text-decoration: none;
+  color: darkviolet;
+}
+
+nav a:hover {
+  color: black;
+  text-decoration: underline;
 }
