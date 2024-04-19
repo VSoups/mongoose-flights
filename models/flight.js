@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 // shorthand we can use when creating a new schema
 const Schema = mongoose.Schema;
 
+
 const destinationSchema = new Schema({
     airport: { type: String, enum: ['LAX', 'SFO', 'ATL', 'DBX', 'LHR', 'HND'] },
     arrival: { type: Date },
-})
+});
 
 const flightSchema = new Schema({
     airline: { type: String, enum: ['American', 'Southwest', 'Hawaiian', 'United', 'Jetblue'] },

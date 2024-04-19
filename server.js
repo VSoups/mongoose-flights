@@ -9,6 +9,7 @@ require('./config/database');
 const indexRouter = require('./routes/index');
 const flightsRouter = require('./routes/flights');
 const desRouter = require('./routes/destinations');
+const ticketRouter = require('./routes/tickets');
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
 // remember, nested resource paths vary, and root is the only thing shared between all of them
 app.use('/', desRouter);
+app.use('/', ticketRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

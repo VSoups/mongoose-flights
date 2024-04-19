@@ -8,16 +8,17 @@
     <h4>Flight Number: </h4>
     <p><%= flightInfo.flightNum %></p>
     <h4>Departure Time: </h4>
-    <p><%= flightInfo.departs %></p>
+    <p><%= flightInfo.departs.toLocaleString() %></p>
     <h4>Destinations:</h4>
     <% if (flightInfo.destinations.length) { %>
         <% flightInfo.destinations.forEach(function(d) { %>
             <p class="arrival"><span class="sub-head">Airport:</span><%= d.airport %>
-            <span class="sub-head">Arrival:</span><%= d.arrival %></p>
+            <span class="sub-head">Arrival:</span><%= d.arrival.toLocaleString() %></p>
         <% }) %>
     <% } else { %>
         <p class="arrival">None submitted yet</p>
     <% } %>
+
     
 </section>
 
@@ -35,5 +36,18 @@
     <input type="datetime-local" name="arrival" required>
     <button type="submit">Add</button>
 </form>
+
+<section id="ticket-section">
+    <h3>Tickets</h3>
+    <a href="/flights/<%= flightInfo._id %>/tickets/new">Add a ticket</a>
+    <% if (tickets.length) { %>
+        <% tickets.forEach(function(s) { %>
+            <p><%= s.seat %></p>
+            <p><%= s.price %></p>
+        <% }) %>
+    <% } else { %>
+        <p>No tickets purchased yet</p>
+    <% } %>
+</section>
         
 <%- include('../partials/footer') %>

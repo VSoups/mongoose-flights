@@ -56,9 +56,9 @@ td {
 }
 
 #info-grid {
-  width: 700px;
+  width: 30rem;
   display: grid;
-  grid-template-columns: 0.75fr max-content;
+  grid-template-columns: 0.6fr max-content;
   border-collapse: collapse;
   border-block: 2px solid black;
   background-color: honeydew;
@@ -67,8 +67,6 @@ td {
 #info-grid * {
   padding: 5px 10px;
 }
-
-
 
 #info-grid > p:not(.arrival) {
   display: flex;
@@ -86,4 +84,35 @@ td {
 .sub-head {
   font-weight: bold;
   padding: 0;
+}
+
+#create-arrival button {
+  text-decoration: none;
+  border: 2px solid black;
+  color: black;
+  background-color: skyblue;
+  padding: 5px 8px;
+}
+
+#create-arrival button:hover {
+  background-color: lightpink;
+}
+
+#ticket-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#ticket-section a {
+  text-decoration: none;
+  border: 2px solid black;
+  color: black;
+  background-color: skyblue;
+  padding: 5px 8px;
+}
+
+#ticket-section a:hover {
+  background-color: lightpink;
 }
